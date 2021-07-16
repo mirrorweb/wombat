@@ -1754,7 +1754,7 @@ Wombat.prototype.rewriteUrl_ = function(originalURL, useRel, mod, doc) {
   var originalLoc = this.$wbwindow.location;
   if (
     this.startsWith(check_url, this.wb_abs_prefix) ||
-    this.startsWith(check_url, this.wb_rel_prefix)
+    this.startsWith(check_url, originalLoc.origin + this.wb_replay_prefix)
   ) {
     return url;
   }
